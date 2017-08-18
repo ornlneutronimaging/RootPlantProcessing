@@ -1,0 +1,256 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started: Crop &mdash; RootPlantProcessing 1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="RootPlantProcessing 1 documentation" href="index.html"/>
+        <link rel="next" title="Getting Started: wc" href="tutorial_wc.html"/>
+        <link rel="prev" title="Getting Started: Stitch" href="tutorial_stitch.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> RootPlantProcessing
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_stitch.html">Getting Started: Stitch</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started: Crop</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_wc.html">Getting Started: wc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_mask.html">Getting Started: mask</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_imagefilter.html">Getting Started: imagefilter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_distmap.html">Getting Started: distmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_radwc.html">Getting Started: radwc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_thickness.html">Getting Started: thickness</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_rootimage.html">Getting Started: rootimage</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">RootPlantProcessing</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Getting Started: Crop</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/tutorial_crop.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started-crop">
+<h1>Getting Started: Crop<a class="headerlink" href="#getting-started-crop" title="Permalink to this headline">¶</a></h1>
+<p><strong>I. OVERVIEW</strong></p>
+<p>The ‘RP_crop’ analysis crops an inputted image.  While it can be used in any context, we suggest using it immediately after the ‘RP_stitch’ analysis to remove any residual blank space left as artifacts from its analysis.</p>
+<p><strong>II. HOW TO USE</strong></p>
+<p>First, open the ‘user_config’ text file in your ‘Root_Processing’ directory.  The parameters used in ‘RP_crop’ are in the 2nd section, and there will be three parameters.  In order, they are:</p>
+<ol class="arabic simple">
+<li>image_filename: this is the full image filename (including directory) where the image is to be found.</li>
+<li>output_filename: this is the full image filename (including directory) where the image is to be saved.  If the directory is not present, the analysis will automatically make the directory.</li>
+<li>cropmat: these are the pixel positions that specify the crop range, specifying the (1) start row, (2) end row, (3) start column, and (4) end column.  The origin point (0,0) is in the top left corner.  See below for a schematic:</li>
+</ol>
+<img alt="_images/cropmat.jpg" src="_images/cropmat.jpg" />
+<p><strong>III. RUNNING THE CODE</strong></p>
+<p>This analysis can be conducted using the [‘RP_crop’] string in the ‘RP_run’ module.</p>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tutorial_wc.html" class="btn btn-neutral float-right" title="Getting Started: wc" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tutorial_stitch.html" class="btn btn-neutral" title="Getting Started: Stitch" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Keita D. Carlo, Jean Bilheux.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
