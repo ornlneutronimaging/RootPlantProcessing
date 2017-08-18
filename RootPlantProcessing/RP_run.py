@@ -13,10 +13,6 @@ import os
 import sys
 
 
-
-
-
-
 def RP_run(wd, wd_userconfig = '', analysis_list = [], parameters_ = 0, override = 0):
     '''
     SUMMARY: 
