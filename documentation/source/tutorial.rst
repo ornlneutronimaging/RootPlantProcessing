@@ -16,7 +16,7 @@ We will then create a fake dataset in order to run and test the analyses.  In yo
 
     import rootprocessing
     wd = '/Users/johnsmith'  #Specify where your data files will be.
-    from rootprocessing.sampledata import sampledata
+    from rhizotools.sampledata import sampledata
     sampledata(wd)
 
 This will create a 'Sample_Data' subdirectory in your library, which will contain a 'raw' subdirectory with a set of 6 images, as well as a dark field and open beam image.
@@ -29,7 +29,7 @@ Also, be sure to *only change the entries following the colon for each parameter
 
 From here, we will use the 'RP_run' module, which will act as the top-level program for running any analyses of interest::
 
-    from rootprocessing.RP_run import RP_run
+    from rhizotools.RP_run import RP_run
 
 We will then specify the analyses of interest.  You can run these in any order, but make sure that you have the necessary images and analyses completed first.  Below is the suggested order of the analyses::
 

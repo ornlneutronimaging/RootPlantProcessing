@@ -19,10 +19,11 @@ license = { text = "MIT" }
 keywords = ["root processing", "neutron", "biology", "ORNL", "MARS"]
 readme = "README.md"
 dependencies = [
-    'numpy', 
-    'astropy',
-    'scipy',
-    'pillow',
+    "numpy", 
+    "astropy",
+    "scipy",
+    "pillow",
+    "scikit-image"
 ]
 
 [project.urls]
@@ -124,6 +125,7 @@ numpy = ">=2.2.3,<3"
 astropy = ">=7.0.1,<8"
 scipy = ">=1.15.2,<2"
 pillow = ">=11.1.0,<12"
+scikit-image = ">=0.25.2,<0.26"
 
 [tool.pixi.tasks]
 # PyPi packaging tasks

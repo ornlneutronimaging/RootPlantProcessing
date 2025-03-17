@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/kdecarlo/CG1D_rootprocessing.svg?branch=master)](https://travis-ci.org/kdecarlo/CG1D_rootprocessing)
+[![Build Status](https://travis-ci.org/kdecarlo/CG1D_rhizotools.svg?branch=master)](https://travis-ci.org/kdecarlo/CG1D_rootprocessing)
 [![codecov](https://codecov.io/gh/kdecarlo/Root_Processing/branch/master/graph/badge.svg)](https://codecov.io/gh/kdecarlo/Root_Processing)
 [![Documentation Status](https://readthedocs.org/projects/rootplotprocessing/badge/?version=latest)](http://rootplotprocessing.readthedocs.io/en/latest/?badge=latest)
 
@@ -17,11 +17,11 @@ This is the root processing suite, rhizotools (`rhizo` means "root related"), fo
 
 	#Importing sample dataset
 	wd = '/Users/...'  #Specify where you saved your sample data
-	from rootprocessing.sampledata import sampledata
+	from rhizotools.sampledata import sampledata
 	sampledata(wd)
 
 	#Running Code - Default Settings
-	from rootprocessing.RP_run import RP_run
+	from rhizotools.RP_run import RP_run
 	analysis_list = [
 		'RP_stitch',
 		'RP_crop',
