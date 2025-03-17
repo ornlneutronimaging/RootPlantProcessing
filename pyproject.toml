@@ -1,0 +1,10 @@
+
+[tool.pixi.project]
+name = "RootPlantProcessing"
+channels = ["conda-forge"]
+platforms = ["osx-arm64"]
+
+[tool.pixi.pypi-dependencies]
+RootPlantProcessing = { path = ".", editable = true }
+
+[tool.pixi.tasks]
