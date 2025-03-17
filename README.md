@@ -35,3 +35,11 @@ This is the root processing suite, rhizotools (`rhizo` means "root related"), fo
 		]
 	wd_userconfig = wd+'/Sample_Data'	#Specify where you saved your user_config file - in case of sample dataset, it is saved together with the data directory
 	RP_run(wd, wd_userconfig, analysis_list) -->
+
+## Known issue
+
+1. When using `pixi install` for the first time, you might see the following error messages. The solutions is to increase your file limit with `ulimit -n 65535` and then run `pixi install` again.
+
+```bash
+Too many open files (os error 24) at path
+```
