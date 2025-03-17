@@ -1,3 +1,51 @@
+[project]
+name = "rhizotools"
+description = "Python package for processing root plant images"
+dynamic = ["version"]
+requires-python = ">=3.11"
+license = "MIT"
+keywords = ["root processing", "neutron", "biology"]
+reamde = "README.md"
+
+[project.urls]
+homepage = "https://github.com/ornlneutronimaging/RootPlantProcessing"
+repository = "https://github.com/ornlneutronimaging/RootPlantProcessing"
+issues = "https://github.com/ornlneutronimaging/RootPlantProcessing/issues"
+# documentation = "link_to_readthedocs"
+
+[build-system]
+requires = [
+  "setuptools>= 42",
+  "wheel",
+  "toml",
+  "versioningit"
+]
+build-backend = "setuptools.build_meta"
+
+[tool.versioningit.vcs]
+method = "git"
+default-tag = "0.1.0"
+
+[tool.versioningit.next-version]
+method = "minor"
+
+[tool.versioningit.format]
+distance = "{next_version}.dev{distance}"
+dirty = "{version}+d{build_date:%Y%m%d}"
+distance-dirty = "{next_version}.dev{distance}+d{build_date:%Y%m%d%H%M}"
+
+[tool.versioningit.write]
+file = "src/rhizotools/_version.py"
+
+# We use this section to map conda packages to PyPI packages if they have different names
+# NOTE: prefix-dev provide minimum mapping, and we should add them in explicitly whenever
+#       needed.
+[conda-pypi-map]
+"conda-forge" = """
+{
+  "pyqt": "PyQt5",
+}
+"""
 
 [tool.pixi.project]
 name = "RootPlantProcessing"
