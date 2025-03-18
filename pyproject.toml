@@ -76,7 +76,7 @@ file = "src/rhizotools/_version.py"
 # ----- PyTest configuration ----- #
 # -------------------------------- #
 [tool.pytest.ini_options]
-addopts = "-v --cov=packagenamepy --cov-report=term-missing"
+addopts = "-v --cov=rhizotools --cov-report=term-missing"
 pythonpath = [
     ".", "src", "scripts"
 ]

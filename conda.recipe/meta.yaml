@@ -41,6 +41,7 @@ requirements:
     - astropy
     - scipy
     - pillow
+    - scikit-image
 
 about:
   home: {{ url }}
