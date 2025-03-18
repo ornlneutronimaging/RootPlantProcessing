@@ -47,5 +47,15 @@ about:
   home: {{ url }}
   license: {{ license }}
   license_family: MIT
-  license_file: ../LICENSE
+  license_file: LICENSE
   summary: {{ description }}
+  doc_url: https://github.com/ornlneutronimaging/RootPlantProcessing
+  dev_url: https://github.com/ornlneutronimaging/RootPlantProcessing
+
+test:
+  imports:
+    - rhizotools
+  requires:
+    - pytest
+  commands:
+    - python -c "import rhizotools; print(rhizotools.__version__)"

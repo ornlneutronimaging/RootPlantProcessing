@@ -3,6 +3,14 @@ legacy/
 *.log
 _version.py
 
+# Anaconda
+conda.recipe/noarch/
+conda.recipe/linux-64/
+conda.recipe/osx-arm64/
+conda.recipe/win-64/
+conda.recipe/channeldata.json
+conda.recipe/index.html
+
 # pixi environments
 .pixi
 *.egg-info
