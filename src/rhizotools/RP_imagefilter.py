@@ -66,7 +66,7 @@ def RP_imagefilter(parameters):
     imdim = np.shape(image)
 
     img = image > 0
-    mask_L = ndimage.measurements.label(img)
+    mask_L = ndimage.label(img)
     mask_label = mask_L[0]
 
     # List of all labeled values

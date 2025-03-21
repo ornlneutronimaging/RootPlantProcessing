@@ -171,7 +171,7 @@ def RP_run(wd, wd_userconfig="", analysis_list=[], parameters_=0, override=0):
         )
 
     if type(override) is int or type(override) is float:
-        if override is not 1 and override is not 0:
+        if override != 1 and override != 0:
             raise ValueError(
                 "Override term is not given a valid value.  Please enter either 0 (no override) or 1 (override)."
             )
