@@ -1,21 +1,17 @@
-import numpy as np
-from astropy.io import fits
-import time
-import scipy.ndimage as imp
-import datetime
-
-from scipy import ndimage
-from skimage.morphology import skeletonize
-import scipy.misc
-from scipy.signal import medfilt
-from PIL import Image
 import os
+import time
 
-from rhizotools.RP_timerstart import RP_timerstart
-from rhizotools.RP_timerprogress import RP_timerprogress
-from rhizotools.RP_timerend import RP_timerend
-from rhizotools.RP_windowrange import RP_windowrange
+import numpy as np
+from PIL import Image
+from scipy import ndimage
+from scipy.signal import medfilt
+from skimage.morphology import skeletonize
+
 from rhizotools.RP_distwindowrange import RP_distwindowrange
+from rhizotools.RP_timerend import RP_timerend
+from rhizotools.RP_timerprogress import RP_timerprogress
+from rhizotools.RP_timerstart import RP_timerstart
+from rhizotools.RP_windowrange import RP_windowrange
 
 
 def RP_thickness(parameters):
@@ -75,7 +71,7 @@ def RP_thickness(parameters):
     # dist = ndimage.morphology.distance_transform_edt(~skel)
 
     # Distance from edge of root to center
-    rootdist = ndimage.morphology.distance_transform_edt(image)
+    rootdist = ndimage.distance_transform_edt(image)
 
     checkwin = int(np.round(np.max(rootdist) * 1.5))
     checkwindow = 11
@@ -85,7 +81,7 @@ def RP_thickness(parameters):
     # Reference distance map for evaluated windows
     windist = np.ones([checkwindow * 2 + 1, checkwindow * 2 + 1])
     windist[checkwindow, checkwindow] = 0
-    windist = ndimage.morphology.distance_transform_edt(windist)
+    windist = ndimage.distance_transform_edt(windist)
 
     [pixelpos_y, pixelpos_x] = np.where(image > 0)
 
@@ -103,8 +99,8 @@ def RP_thickness(parameters):
         [y1, y2, x1, x2] = RP_windowrange(i, j, np.shape(windist)[0], imdim)
         [y_1, y_2, x_1, x_2, y_c, x_c] = RP_distwindowrange(i, j, np.shape(windist)[0], imdim)
 
-        windist_w = windist[y_1:y_2, x_1:x_2]
-        image_w = image[y1:y2, x1:x2]
+        # windist_w = windist[y_1:y_2, x_1:x_2]
+        # image_w = image[y1:y2, x1:x2]
         # dist_w = dist[y1:y2,x1:x2]
         skel_w = skel[y1:y2, x1:x2]
         rootdist_w = rootdist[y1:y2, x1:x2]
@@ -121,7 +117,7 @@ def RP_thickness(parameters):
             minskelpos = np.where(skeldist == np.min(skeldist))
             minskelpos_y = skelpos_y[minskelpos[0][0]]
             minskelpos_x = skelpos_x[minskelpos[0][0]]
-            dist_pixel_skel = skeldist[minskelpos[0][0]]
+            # dist_pixel_skel = skeldist[minskelpos[0][0]]
 
             # Find minimum distance from pixel of interest to edge
             dist_pixel_edge = rootdist_w[y_c, x_c]
