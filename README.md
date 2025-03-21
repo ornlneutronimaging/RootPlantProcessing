@@ -1,3 +1,5 @@
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/ornlneutronimaging/RootPlantProcessing/next.svg)](https://results.pre-commit.ci/latest/github/ornlneutronimaging/RootPlantProcessing/next)
+
 # Root Processing
 
 This is the root processing suite, rhizotools (`rhizo` means "root related"), for images at the ORNL MARS (formerly CG-1D) beamline.
@@ -74,7 +76,7 @@ pixi run build-docs
 To add new dependencies:
 
 1. Add Python dependencies to `[project.dependencies]` in `pyproject.toml`
-1. Add pixi/conda dependencies to `[tool.pixi.dependencies]` in `pyproject.toml` 
+1. Add pixi/conda dependencies to `[tool.pixi.dependencies]` in `pyproject.toml`
 1. Run `pixi install` to update your environment
 
 ## How to Use
