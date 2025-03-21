@@ -6,7 +6,7 @@ Getting Started: wc
 
 **I. OVERVIEW**
 
-The 'RP_wc' analysis creates a volumetric water content map from the specified image using equations outlined in Kang et al., 2013 [1]_.  This analysis assumes that the images are in a quasi-2D (i.e. thin plate) form, with soil held together by two aluminum plates.  
+The 'RP_wc' analysis creates a volumetric water content map from the specified image using equations outlined in Kang et al., 2013 [1]_.  This analysis assumes that the images are in a quasi-2D (i.e. thin plate) form, with soil held together by two aluminum plates.
 
 Input image must be a neutron transmission image.
 
@@ -14,9 +14,9 @@ Input image must be a neutron transmission image.
 
 First, open the 'user_config' text file in your 'Root_Processing' directory.  The parameters used in 'RP_wc' are in the 3rd section, and there will be eight parameters.  In order, they are:
 
-1. image_filename: this is the full image filename (including directory) where the image is to be found.  
+1. image_filename: this is the full image filename (including directory) where the image is to be found.
 
-2. output_filename: this is the full image filename (including directory) where the image is to be saved.  If the directory is not present, the analysis will automatically make the directory.  
+2. output_filename: this is the full image filename (including directory) where the image is to be saved.  If the directory is not present, the analysis will automatically make the directory.
 
 3. b_w: scattering coefficient of water [cm^-2]
 
@@ -32,7 +32,7 @@ First, open the 'user_config' text file in your 'Root_Processing' directory.  Th
 
 **III. RUNNING THE CODE**
 
-This analysis can be conducted using the ['RP_wc'] string in the 'RP_run' module.  
+This analysis can be conducted using the ['RP_wc'] string in the 'RP_run' module.
 
 ---------------
 
