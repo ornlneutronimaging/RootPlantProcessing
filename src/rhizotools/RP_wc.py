@@ -1,19 +1,12 @@
-import numpy as np
-from astropy.io import fits
-import time
-import scipy.ndimage as imp
-import datetime
-
-from scipy import ndimage
-from skimage.morphology import skeletonize
-import scipy.misc
-from scipy.signal import medfilt
-from PIL import Image
 import os
+import time
 
-from rhizotools.RP_timerstart import RP_timerstart
-from rhizotools.RP_timerprogress import RP_timerprogress
+import numpy as np
+from PIL import Image
+
+# scipy.misc is deprecated and not used
 from rhizotools.RP_timerend import RP_timerend
+from rhizotools.RP_timerstart import RP_timerstart
 
 
 def RP_wc(parameters):
@@ -62,7 +55,7 @@ def RP_wc(parameters):
     s_a = parameters["s_a"]
     s_s = parameters["s_s"]
     x_s = parameters["x_s"]
-    x_a = parameters["x_a"]
+    # x_a = parameters["x_a"]
 
     # image = fits.open(image_filename)[0].data
     image = Image.open(image_filename)
@@ -70,7 +63,7 @@ def RP_wc(parameters):
 
     checkval = np.sum(image == 0)
     if np.sum(image == 0) > 0:
-        raise ValueError("Image is blank.  Please re-check inputted data.")
+        raise ValueError(f"Image is blank.  Please re-check inputted data. checkval = {checkval}")
 
     # Conversion from transmission data to water thickness [see Kang et al., 2013]
     C1 = s_w / (2 * b_w)
