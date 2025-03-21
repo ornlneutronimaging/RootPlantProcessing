@@ -46,7 +46,7 @@ master_doc = "index"
 
 # General information about the project.
 project = "RootPlantProcessing"
-copyright = "2017, Keita D. Carlo, Jean Bilheux"
+# copyright = "2017, Keita D. Carlo, Jean Bilheux"
 author = "Keita D. Carlo, Jean Bilheux"
 
 # The version info for the project you're documenting, acts as replacement for

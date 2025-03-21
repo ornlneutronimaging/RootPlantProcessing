@@ -27,7 +27,7 @@ First, open the 'user_config' text file in your 'Root_Processing' directory.  Th
 
 4. threshold: this is the minimum threshold against which the image-mean value difference will be evaluated.
 
-5. globthresh: this is a global threshold value - if the pixel of interest has a value lower than this, then the pixel will be assigned as a mask pixel.  This is to avoid an 'outline' effect where the center of objects with a size larger than the window will not be mislabeled due to homogenously dark pixel regions (see T 3 in figure 1).
+5. globthresh: this is a global threshold value - if the pixel of interest has a value lower than this, then the pixel will be assigned as a mask pixel.  This is to avoid an 'outline' effect where the center of objects with a size larger than the window will not be mislabeled due to homogeneously dark pixel regions (see T 3 in figure 1).
 
 **III. RUNNING THE CODE**
 

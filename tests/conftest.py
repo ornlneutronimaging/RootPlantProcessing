@@ -11,7 +11,7 @@ from rhizotools.sampledata import sampledata
 
 
 @pytest.fixture(scope="function")
-def temp_data_dir(request: pytest.FixtureRequest) -> Generator[str, None, None]:
+def temp_data_dir(request: pytest.FixtureRequest) -> Generator[str, None, None]:  # noqa: ARG001
     """Creates a temporary directory for test data and cleans it up after the test."""
     # Current file path to get to project root
     file_path: str = os.path.dirname(__file__)
@@ -36,7 +36,7 @@ def temp_data_dir(request: pytest.FixtureRequest) -> Generator[str, None, None]:
 
 
 @pytest.fixture(scope="function")
-def sample_data(temp_data_dir: str) -> Generator[str, None, None]:
+def sample_data(temp_data_dir: str) -> Generator[str, None, None]:  # noqa: ARG001
     """Creates sample data in the temporary directory."""
     # Get absolute path to the project root
     file_path: str = os.path.dirname(__file__)
