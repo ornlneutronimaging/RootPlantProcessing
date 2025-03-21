@@ -1,20 +1,14 @@
-import numpy as np
-from astropy.io import fits
-import time
-import scipy.ndimage as imp
-import datetime
-
-from scipy import ndimage
-from skimage.morphology import skeletonize
-import scipy.misc
-from scipy.signal import medfilt
-from PIL import Image
 import os
+import time
 
-from rhizotools.RP_timerstart import RP_timerstart
-from rhizotools.RP_timerprogress import RP_timerprogress
-from rhizotools.RP_timerend import RP_timerend
+import numpy as np
+from PIL import Image
+from scipy import ndimage
+
 from rhizotools.RP_remove import RP_remove
+from rhizotools.RP_timerend import RP_timerend
+from rhizotools.RP_timerprogress import RP_timerprogress
+from rhizotools.RP_timerstart import RP_timerstart
 
 
 def RP_radwc(parameters):
@@ -86,20 +80,20 @@ def RP_radwc(parameters):
     image_mask = np.array(image_mask)
 
     image_mask = image_mask > 0
-    image_rootdist = ndimage.morphology.distance_transform_edt(~image_mask)
+    image_rootdist = ndimage.distance_transform_edt(~image_mask)
 
     soilmap = image_mask < 1
 
     pixelpos = np.where(soilmap)
     pixelpos_y = pixelpos[0]
-    pixelpos_x = pixelpos[1]
+    # pixelpos_x = pixelpos[1]
 
     data = np.zeros([np.shape(pixelpos_y)[0], 3])
 
     radrange = np.unique(image_distmap)
     distrange = np.unique(image_rootdist)
     maxdistval = np.max(distrange)
-    maxradval = np.max(radrange)
+    # maxradval = np.max(radrange)
     newdistrange = np.array(range(0, int(np.floor(maxdistval)), pixelbin))
 
     data = np.zeros([int(np.shape(radrange)[0]) - 1, np.shape(range(0, int(np.floor(maxdistval)), pixelbin))[0]])

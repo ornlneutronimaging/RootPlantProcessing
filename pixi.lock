@@ -9944,8 +9944,8 @@ packages:
   timestamp: 1598024297745
 - pypi: .
   name: rhizotools
-  version: 0.4.0.dev8+d202503211655
-  sha256: 0f91d698d0dfc6d657197124522052d4387db55ec05443120f18781478e26454
+  version: 0.4.0.dev9+d202503211720
+  sha256: 96d185bf8a4635ce4b60d2a3ea5a14a4ee70e42a1ca20b454e69845bdb689919
   requires_dist:
   - numpy
   - astropy
