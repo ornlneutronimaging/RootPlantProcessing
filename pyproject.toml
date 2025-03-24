@@ -19,7 +19,7 @@ license = { text = "MIT" }
 keywords = ["root processing", "neutron", "biology", "ORNL", "MARS"]
 readme = "README.md"
 dependencies = [
-    "numpy", 
+    "numpy",
     "astropy",
     "scipy",
     "pillow",

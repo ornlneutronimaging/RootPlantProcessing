@@ -74,7 +74,7 @@ pixi run build-docs
 To add new dependencies:
 
 1. Add Python dependencies to `[project.dependencies]` in `pyproject.toml`
-1. Add pixi/conda dependencies to `[tool.pixi.dependencies]` in `pyproject.toml` 
+1. Add pixi/conda dependencies to `[tool.pixi.dependencies]` in `pyproject.toml`
 1. Run `pixi install` to update your environment
 
 ## How to Use

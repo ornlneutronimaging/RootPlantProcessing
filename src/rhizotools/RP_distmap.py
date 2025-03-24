@@ -1,22 +1,17 @@
-import numpy as np
-from astropy.io import fits
+import os
 import time
-import scipy.ndimage as imp
-import datetime
 
+import numpy as np
+from PIL import Image
 from scipy import ndimage
 from skimage.morphology import skeletonize
-import scipy.misc
-from scipy.signal import medfilt
-from PIL import Image
-import os
 
-from rhizotools.RP_timerstart import RP_timerstart
-from rhizotools.RP_timerprogress import RP_timerprogress
-from rhizotools.RP_timerend import RP_timerend
-from rhizotools.RP_windowrange import RP_windowrange
 from rhizotools.RP_distwindowrange import RP_distwindowrange
 from rhizotools.RP_remove import RP_remove
+from rhizotools.RP_timerend import RP_timerend
+from rhizotools.RP_timerprogress import RP_timerprogress
+from rhizotools.RP_timerstart import RP_timerstart
+from rhizotools.RP_windowrange import RP_windowrange
 
 
 def RP_distmap(parameters):

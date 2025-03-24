@@ -1,7 +1,8 @@
-import unittest
 import os
-import sys
 import shutil
+import sys
+import unittest
+
 from rhizotools.RP_run import RP_run
 
 # sys.path.append(wd+'/Analyses')

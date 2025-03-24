@@ -1,19 +1,12 @@
-import numpy as np
-from astropy.io import fits
-import time
-import scipy.ndimage as imp
-import datetime
-
-from scipy import ndimage
-from skimage.morphology import skeletonize
-import scipy.misc
-from scipy.signal import medfilt
-from PIL import Image
 import os
+import time
 
-from rhizotools.RP_timerstart import RP_timerstart
-from rhizotools.RP_timerprogress import RP_timerprogress
+import numpy as np
+from PIL import Image
+
 from rhizotools.RP_timerend import RP_timerend
+from rhizotools.RP_timerprogress import RP_timerprogress
+from rhizotools.RP_timerstart import RP_timerstart
 from rhizotools.RP_windowrange import RP_windowrange
 
 

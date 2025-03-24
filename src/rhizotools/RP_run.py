@@ -1,18 +1,3 @@
-import numpy as np
-from astropy.io import fits
-import time
-import scipy.ndimage as imp
-import datetime
-
-from scipy import ndimage
-from skimage.morphology import skeletonize
-import scipy.misc
-from scipy.signal import medfilt
-from PIL import Image
-import os
-import sys
-
-
 def RP_run(wd, wd_userconfig="", analysis_list=[], parameters_=0, override=0):
     """
     SUMMARY:
@@ -48,23 +33,23 @@ def RP_run(wd, wd_userconfig="", analysis_list=[], parameters_=0, override=0):
     # sys.path.append(wd+'/Analyses')
     # sys.path.append(wd+'/Misc')
 
-    from rhizotools.RP_IOfilecheck import RP_IOfilecheck
-    from rhizotools.RP_timerstart import RP_timerstart
-    from rhizotools.RP_timerprogress import RP_timerprogress
-    from rhizotools.RP_timerend import RP_timerend
-    from rhizotools.RP_stitch import RP_stitch
     from rhizotools.RP_crop import RP_crop
-    from rhizotools.RP_wc import RP_wc
-    from rhizotools.RP_mask import RP_mask
-    from rhizotools.RP_imagefilter import RP_imagefilter
     from rhizotools.RP_distmap import RP_distmap
-    from rhizotools.RP_radwc import RP_radwc
-    from rhizotools.RP_thickness import RP_thickness
-    from rhizotools.RP_userconfiganalysis import RP_userconfiganalysis
-    from rhizotools.RP_windowrange import RP_windowrange
     from rhizotools.RP_distwindowrange import RP_distwindowrange
+    from rhizotools.RP_imagefilter import RP_imagefilter
+    from rhizotools.RP_IOfilecheck import RP_IOfilecheck
+    from rhizotools.RP_mask import RP_mask
+    from rhizotools.RP_radwc import RP_radwc
     from rhizotools.RP_remove import RP_remove
     from rhizotools.RP_rootimage import RP_rootimage
+    from rhizotools.RP_stitch import RP_stitch
+    from rhizotools.RP_thickness import RP_thickness
+    from rhizotools.RP_timerend import RP_timerend
+    from rhizotools.RP_timerprogress import RP_timerprogress
+    from rhizotools.RP_timerstart import RP_timerstart
+    from rhizotools.RP_userconfiganalysis import RP_userconfiganalysis
+    from rhizotools.RP_wc import RP_wc
+    from rhizotools.RP_windowrange import RP_windowrange
 
     """
     Definitions that can be run for analysis (see below for details):
@@ -87,11 +72,11 @@ def RP_run(wd, wd_userconfig="", analysis_list=[], parameters_=0, override=0):
     5. radwc:
     - REQUIRES: water content image, soil distance map, and mask image (all fits format)
     NOTE: if run separately, user must specify all inputs
-    - PRODUCES: water content-radius text, wc-rad count, radius and distance values (text files) 
+    - PRODUCES: water content-radius text, wc-rad count, radius and distance values (text files)
 
     Miscellaneous processing:
     1. stitch:
-    - REQUIRES: original radiographs, open beam (labeled 'OB'), and dark field 
+    - REQUIRES: original radiographs, open beam (labeled 'OB'), and dark field
     (labeled 'DF') images (fits format)
     - PRODUCES: stitched neutron transmission image (fits format, range from 0-1)
 
@@ -171,7 +156,7 @@ def RP_run(wd, wd_userconfig="", analysis_list=[], parameters_=0, override=0):
         )
 
     if type(override) is int or type(override) is float:
-        if override is not 1 and override is not 0:
+        if override != 1 and override != 0:
             raise ValueError(
                 "Override term is not given a valid value.  Please enter either 0 (no override) or 1 (override)."
             )
