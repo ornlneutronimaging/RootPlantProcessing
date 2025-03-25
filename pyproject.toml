@@ -106,7 +106,9 @@ exclude = ["notebooks/**", "**/*.ipynb"]
 
 [tool.ruff.lint]
 select = ["A", "ARG","ASYNC","BLE","C90", "E", "F", "I", "UP032", "W"]
-ignore = ["E741"]
+ignore = [
+    "E741"  # ambiguous variable name, such as L, E, etc.
+]
 
 [tool.ruff.lint.isort]
 known-first-party = ["rhizotools"]

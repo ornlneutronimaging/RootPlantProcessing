@@ -99,7 +99,7 @@ def RP_thickness(parameters):
         [y1, y2, x1, x2] = RP_windowrange(i, j, np.shape(windist)[0], imdim)
         [y_1, y_2, x_1, x_2, y_c, x_c] = RP_distwindowrange(i, j, np.shape(windist)[0], imdim)
 
-        # windist_w = windist[y_1:y_2, x_1:x_2]
+        windist_w = windist[y_1:y_2, x_1:x_2]  # noqa: F841
         # image_w = image[y1:y2, x1:x2]
         # dist_w = dist[y1:y2,x1:x2]
         skel_w = skel[y1:y2, x1:x2]
