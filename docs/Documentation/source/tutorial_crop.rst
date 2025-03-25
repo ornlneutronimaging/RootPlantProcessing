@@ -13,9 +13,9 @@ The 'RP_crop' analysis crops an inputted image.  While it can be used in any con
 
 First, open the 'user_config' text file in your 'Root_Processing' directory.  The parameters used in 'RP_crop' are in the 2nd section, and there will be three parameters.  In order, they are:
 
-1. image_filename: this is the full image filename (including directory) where the image is to be found.  
+1. image_filename: this is the full image filename (including directory) where the image is to be found.
 
-2. output_filename: this is the full image filename (including directory) where the image is to be saved.  If the directory is not present, the analysis will automatically make the directory.  
+2. output_filename: this is the full image filename (including directory) where the image is to be saved.  If the directory is not present, the analysis will automatically make the directory.
 
 3. cropmat: these are the pixel positions that specify the crop range, specifying the (1) start row, (2) end row, (3) start column, and (4) end column.  The origin point (0,0) is in the top left corner.  See below for a schematic:
 
@@ -23,4 +23,4 @@ First, open the 'user_config' text file in your 'Root_Processing' directory.  Th
 
 **III. RUNNING THE CODE**
 
-This analysis can be conducted using the ['RP_crop'] string in the 'RP_run' module.  
+This analysis can be conducted using the ['RP_crop'] string in the 'RP_run' module.
