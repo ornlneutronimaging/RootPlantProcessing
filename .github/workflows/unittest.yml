@@ -7,12 +7,15 @@ on:
     branches: [next, qa, main]
     tags: ['v*']
 
+permissions:
+  contents: read
+
 jobs:
   linux:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: prefix-dev/setup-pixi@v0.9.6
+      - uses: prefix-dev/setup-pixi@5185adfbffb4bd703da3010310260805d89ebb11 # v0.9.6
         with:
           manifest-path: pyproject.toml
       - name: run unit tests
