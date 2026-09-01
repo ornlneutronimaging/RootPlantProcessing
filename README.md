@@ -83,24 +83,26 @@ To add new dependencies:
 
 ```python
 # Importing sample dataset
-wd = '/Users/...'  # Specify where you saved your sample data
+wd = "/Users/..."  # Specify where you saved your sample data
 from rhizotools.sampledata import sampledata
+
 sampledata(wd)
 
 # Running Code - Default Settings
 from rhizotools.RP_run import RP_run
+
 analysis_list = [
-    'RP_stitch',
-    'RP_crop',
-    'RP_wc',
-    'RP_mask',
-    'RP_imagefilter',
-    'RP_distmap',
-    'RP_radwc',
-    'RP_thickness',
-    'RP_rootimage',
+    "RP_stitch",
+    "RP_crop",
+    "RP_wc",
+    "RP_mask",
+    "RP_imagefilter",
+    "RP_distmap",
+    "RP_radwc",
+    "RP_thickness",
+    "RP_rootimage",
 ]
-wd_userconfig = wd+'/Sample_Data'  # Specify where you saved your user_config file
+wd_userconfig = wd + "/Sample_Data"  # Specify where you saved your user_config file
 RP_run(wd, wd_userconfig, analysis_list)
 ```
 
